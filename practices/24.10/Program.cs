@@ -39,7 +39,7 @@ namespace _5_practic_work
 
             //задание 2
 
-            static void Main(string[] args)
+        static void Main(string[] args)
         {
             double mn = 1000;
             int company = 0;
@@ -71,35 +71,6 @@ namespace _5_practic_work
 
             Console.WriteLine($"{company} {mn}");
             Console.ReadLine();
-
-            //для тестов без заполенния вручную через консоль
-
-            //double[,] milks = {
-            //     {10, 10, 5 , 10, 10, 10 , 12.23, 20.12},
-            //     {5, 15, 20, 7, 8, 9, 43.28, 16.99,}
-            //};
-            //int N = milks.Length / 8;
-            //Console.WriteLine(N);
-            //double mn = 1000;
-            //int company = 0;
-            //for (int i = 0; i < N; i++)
-            //{
-            //    double S1 = 2 * (milks[i, 0] * milks[i, 1] + milks[i, 0] * milks[i, 2] + milks[i, 1] * milks[i, 2]);
-            //    double S2 = 2 * (milks[i, 3] * milks[i, 4] + milks[i, 3] * milks[i, 5] + milks[i, 4] * milks[i, 5]);
-            //    double V1 = milks[i, 0] * milks[i, 1] * milks[i, 2];
-            //    double V2 = milks[i, 3] * milks[i, 4] * milks[i, 5];
-            //    double C1 = milks[i, 6];
-            //    double C2 = milks[i, 7];
-            //    double price = Math.Round((S1 * C2 - S2 * C1) / (V2 * S1 - S2 * V1) * 1000, 2);
-            //    Console.WriteLine(price);
-            //    if (price < mn)
-            //    {
-            //        mn = price;
-            //        company = i;
-            //    }
-            //}
-            //Console.WriteLine($"{company} {mn}");
-            //Console.ReadLine();
         }
     }
 }
