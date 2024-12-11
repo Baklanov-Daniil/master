@@ -49,7 +49,7 @@ namespace _27._11
             string[] sogl = {"B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P",
                 "Q", "R", "S", "T", "V", "W", "X", "Z"};
             string[] glas = { "A", "E", "I", "O", "U", "Y" };
-            string[] arr = Task1(input_string).Split();
+            string[] arr = Task1(input_string).Split(); // форматрирование строки 
             int answer_count = 0;
             foreach (string i in arr)
             {
