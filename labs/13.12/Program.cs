@@ -49,10 +49,12 @@ namespace _13._12
             public void Div()
             {
                 if (this.second == 0) { Console.WriteLine("Деление на 0 невозможно"); }
-                else {
+                else 
+                {
                     float first = this.first;
                     float second = this.second;
-                    Console.WriteLine(first/second); }
+                    Console.WriteLine(first/second); 
+                }
             }
 
             public void Minus()
