@@ -44,7 +44,7 @@ namespace _17._12
                         break;
                 }
                 Console.WriteLine();
-                if (Close == true) { return; }
+                if (Close == true) { break; }
             }   
         }
 
