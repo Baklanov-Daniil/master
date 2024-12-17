@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Diagnostics.Tracing;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading.Channels;
+using System;
 
 namespace _17._12
 {
@@ -45,15 +42,11 @@ namespace _17._12
                     case 4:
                         Close = true;
                         break;
-                    case 5:
-                        Show_Info(Base);
-                        break;
                 }
                 Console.WriteLine();
                 if (Close == true) { return; }
             }   
         }
-
 
         static Planet[] Enter_Base()
         {
@@ -89,8 +82,8 @@ namespace _17._12
                 }
             }
             return 1;
-
         }
+        
         static int Distance_Choise(Planet[] Base)
         {
             
@@ -127,22 +120,7 @@ namespace _17._12
             int act = int.Parse(Console.ReadLine());
             return act;
         }
-
-        static void Show_Info(Planet[] Base)
-        {
-            if (Base.Length == 0)
-            {
-                Console.WriteLine("База пуста");
-            }
-            else
-            {
-                foreach (Planet planet in Base)
-                {
-                    Console.WriteLine($"{planet.Name} {planet.Distance} {planet.Diameter} {planet.Satellite_count}");
-                }
-            }
-        }
-
+        
         static void Main(string[] args)
         {
             Menu();
