@@ -14,10 +14,13 @@ namespace _29._11
             for (int i = 0; i < input_string.Length - 1; i++)
             {
                 if ((Flag != true) && (input_string[i] == 'X')) { Flag = true; }
-                if ((input_string[i] == 'X') && (input_string[i + 1] == 'Y')) { tlen += 1; }
-                else if ((input_string[i] == 'Y') && (input_string[i + 1] == 'Z')) { tlen += 1; }
-                else if ((input_string[i] == 'Z') && (input_string[i + 1] == 'X')) { tlen += 1; }
-                else { mxlen = Math.Max(tlen, mxlen); tlen = 1; }
+                if (Flag == true)
+                {
+                    if ((input_string[i] == 'X') && (input_string[i + 1] == 'Y')) { tlen += 1; }
+                    else if ((input_string[i] == 'Y') && (input_string[i + 1] == 'Z')) { tlen += 1; }
+                    else if ((input_string[i] == 'Z') && (input_string[i + 1] == 'X')) { tlen += 1; }
+                    else { mxlen = Math.Max(tlen, mxlen); tlen = 1; Flag = false; }
+                }
             }
             if (tlen != 1) { mxlen = Math.Max(mxlen, tlen); }
             if (!input_string.Contains("X")) { mxlen = 0; }
