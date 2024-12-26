@@ -1,82 +1,52 @@
-﻿using System;
+using System;
 
-namespace practic_work
-{
-    class Program
-    {
-        static string Mix(string[] args, string answer)
-        {
-            string str = "";
-            for (int i = 1; i < args.Length; i++)
-            {
-                str = str + args[i];
-            }
-            return answer + $"MX{str}XM";
-        }
-
-        static string Water(string[] args, string answer)
-        {
-            string str = "";
-            for (int i = 1; i < args.Length; i++)
-            {
-                str = str + args[i];
-            }
-            return answer + $"WT{str}TW";
-        }
-
-        static string Dust(string[] args, string answer)
-        {
-            string str = "";
-            for (int i = 1; i < args.Length; i++)
-            {
-                str = str + args[i];
-            }
-            return answer + $"DT{str}TD";
-        }
-        static string Fire(string[] args, string answer)
-        {
-            string str = "";
-            for (int i = 1; i < args.Length; i++)
-            {
-                str = str + args[i];
-            }
-            return answer + $"FR{str}RF";
-        }
-
-        static void Main(string[] args)
-        {
+namespace zeilevarenie{
+    class Program {
+        
+        static string Magic(string operations_before, string[] splited_input_string) {
             string answer = "";
-            string massive = "";
-            while (true)
-            {
-                string enter = Console.ReadLine();
-                if (enter == "END")
-                {
+            for (int i=1; i<splited_input_string.Length; i++) {
+                if (int.TryParse(splited_input_string[i], out int _)) {
+                    answer += operations_before.Split(" ")[int.Parse(splited_input_string[i])-1];
+                }
+                else {
+                    answer += splited_input_string[i];
+                }
+            }
+            return answer;
+        }
+
+        static void Main(string[] args) {
+            string memory = "";
+            string start = "";
+            string end = "";
+            while (true) {
+                string input_string = Console.ReadLine();
+                if (input_string=="END") {
                     break;
                 }
-                string[] text = enter.Split(" ");
-                switch (text[0])
-                {
-                    case "MIX":
-                        massive += Mix(text, answer) + " ";
+                string[] splited_input_string = input_string.Split(" ");
+                switch (splited_input_string[0]) {
+                    case "DUST":
+                        start = "DT"; 
+                        end = "TD";
                         break;
                     case "WATER":
-                        massive += Water(text, answer) + " ";
+                        start = "WT"; 
+                        end = "TW";
                         break;
-                    case "DUST":
-                        massive += Dust(text, answer) + " ";
+                    case "MIX":
+                        start = "MX"; 
+                        end = "XM";
                         break;
                     case "FIRE":
-                        massive += Fire(text, answer) + " ";
+                        start = "FR"; 
+                        end = "RF";
                         break;
                 }
+                memory += start + Magic(memory, splited_input_string) + end + " ";
             }
-            Console.WriteLine(massive);
-            string[] magic = massive.Split(" ");
-            Console.WriteLine(magic[2]);
-
-            Type a = typeof(int);
-            Console.WriteLine(a);
+            Console.WriteLine(memory.Trim().Split(" ")[^1]);
         }
     }
 }
