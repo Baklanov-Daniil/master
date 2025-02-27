@@ -1,0 +1,15 @@
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.GeneratedMSBuildEditorConfig.editorconfig
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.AssemblyInfoInputs.cache
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.AssemblyInfo.cs
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.csproj.CoreCompileInputs.cache
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.sourcelink.json
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/bin/Debug/net9.0/02.27
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/bin/Debug/net9.0/02.27.deps.json
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/bin/Debug/net9.0/02.27.runtimeconfig.json
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/bin/Debug/net9.0/02.27.dll
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/bin/Debug/net9.0/02.27.pdb
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.dll
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/refint/02.27.dll
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.pdb
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/02.27.genruntimeconfig.cache
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/labs/02.27/obj/Debug/net9.0/ref/02.27.dll
