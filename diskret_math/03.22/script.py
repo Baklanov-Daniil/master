@@ -11,9 +11,9 @@ def get_data():
                 data[i][j] = float("inf")
     return data
 
-def ford_bellman(graph):
+def ford_bellman(data, start):
     lambda_list = [float("inf") for _ in data]
-    lambda_list[0] = 0
+    lambda_list[start] = 0
     data_len = len(data)
     for _ in range(data_len-1):
         update = False
@@ -27,6 +27,6 @@ def ford_bellman(graph):
 
 if __name__=="__main__":
     data = get_data()
-    ford_bellman(data)
+    ford_bellman(data, 1)
 
     
