@@ -11,7 +11,7 @@ def algorithm_deikstra(data, start, end):
             if not visited[i] and dist[i] < min_dist:
                 min_dist = dist[i]
                 first_vertex = i
-        if first_vertex == -1 or first_vertex == end:
+        if first_vertex == -1:
             break
         visited[first_vertex] = True
         for second_vertex in range(data_len):
@@ -31,5 +31,5 @@ def get_data():
 
 if __name__=="__main__":
     data = get_data()
-    algorithm_deikstra(data, 0, 4)
+    algorithm_deikstra(data, 2, 3)
     

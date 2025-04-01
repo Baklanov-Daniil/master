@@ -20,7 +20,7 @@ def first_algorithm(data):
         del vertex_list[0]
         for row in clasters[counter]:
             for column in range(len(data[0])):
-                if data[row][column] == 1 and column in vertex_list:
+                if data[row][column] != 0 and column in vertex_list:
                     clasters[counter].append(column)
                     vertex_list.remove(column)
         counter += 1
@@ -34,7 +34,7 @@ def second_algorithm(data):
     for vertex in list(vertexes_dict.keys())[1:]:
         min_set = set()
         for column in range(len(data[0])):
-            if data[vertex][column] == 1 and vertexes_dict[column] != 0:
+            if data[vertex][column] != 0 and vertexes_dict[column] != 0:
                 min_set.add(vertexes_dict[column])
         try:        
             mn = min(min_set)
@@ -51,10 +51,6 @@ if __name__=="__main__":
     data = get_data()
     first_algorithm(data)
     second_algorithm(data)
-    
-
-
-        
 
 
         

@@ -27,6 +27,6 @@ def ford_bellman(data, start):
 
 if __name__=="__main__":
     data = get_data()
-    ford_bellman(data, 1)
+    ford_bellman(data, 0)
 
     

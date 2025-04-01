@@ -45,7 +45,7 @@ def find_components(data, edge=None):
             for column in range(len(data[0])):
                 if edge and row == edge[0] and column == edge[1]:
                     continue
-                if data[row][column] == 1 and column in vertex_list:
+                if data[row][column] != 0 and column in vertex_list:
                     clasters[counter].append(column)
                     vertex_list.remove(column)
         counter += 1
@@ -55,6 +55,7 @@ def find_bridge(data, ost_tree):
     for edge in ost_tree:
         if find_components(data, edge)!=1:
             print(f"ребро {edge} является мостом")
+        else: print(f"ребро {edge} не является мостом")
 
 
 
@@ -62,3 +63,5 @@ if __name__=="__main__":
     data = get_data()
     ost_tree = algorithm_prima(data)
     find_bridge(data, ost_tree)
+
+
