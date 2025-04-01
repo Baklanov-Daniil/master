@@ -19,13 +19,14 @@ def first_algorithm(data):
     visited.append(not_visited.pop(0))
     from_vertex = to_vertex = None
     while not_visited:
+        from_vertex = to_vertex = None
         min_weight = float('inf')
         for first_vertex in visited:
             for second_vertex in not_visited:
                 if data[first_vertex][second_vertex] != 0 and data[first_vertex][second_vertex]<min_weight:
                     min_weight = data[first_vertex][second_vertex]
                     from_vertex, to_vertex = first_vertex, second_vertex
-        if from_vertex!=None and to_vertex!=None:
+        if from_vertex is not None and to_vertex is not None:
             min_ost_tree.append(min_weight)
             visited.append(to_vertex)
             not_visited.remove(to_vertex)
@@ -53,6 +54,7 @@ def second_algorithm(data):
     vertexes_dict = dict(sorted(vertexes_dict.items(), key=lambda item: item[1]))
     sum = 0
     components = [[]]
+    a = []
     components[0].append(list(vertexes_dict.keys())[0][0])
     for vertexes_pair in vertexes_dict.items():
         id_1 = find_index(components, vertexes_pair[0][0])
@@ -73,10 +75,6 @@ def second_algorithm(data):
                 continue
         sum+=vertexes_pair[1]
     print(sum)
-
-        
-        
-        
 
 if __name__=="__main__":
     data = get_data()
