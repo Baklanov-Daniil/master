@@ -41,22 +41,22 @@ def find_start_end(matr):
     return start, end
 
 
-def get_points(matr, point):
+def get_neighbours_points(point):
     p1 = [point[0], point[1]-1]
     p2 = [point[0]-1, point[1]]
     p3 = [point[0], point[1]+1]
     p4 = [point[0]+1, point[1]]
     return p1, p2, p3, p4
 
-def add_points(matr, point: list, queue: list, proccesd_point):
-    p1, p2, p3, p4 = get_points(matr, point)
+def add_points(matr, point, queue, proccesd_point):
+    p1, p2, p3, p4 = get_neighbours_points(point)
     for p in [p1, p2, p3, p4]:
         if matr[p[0]][p[1]]!="x" and p not in proccesd_point:
             queue.append(p)
     return queue
 
 def set_value(matr, point):
-    p1, p2, p3, p4 = get_points(matr, point)
+    p1, p2, p3, p4 = get_neighbours_points(point)
     value_list = []
     for p in [p1, p2, p3, p4]:
         if matr[p[0]][p[1]]!="x" and matr[p[0]][p[1]]!="<":
@@ -77,7 +77,8 @@ if __name__=="__main__":
         add_points(matr, point, queue, procced_points)
         procced_points.append(point)
         queue.remove(point)
-    if matr[end[0]][end[1]] not in [float("inf"), "<"]: print(f"Выход найден: его координаты {matr[end[0]][end[1]]}")
+    show_matr(matr)
+    if matr[end[0]][end[1]] != "<": print(f"Выход найден: длина пути равна {matr[end[0]][end[1]]}")
     else: print("Выход не достижим")
         
         

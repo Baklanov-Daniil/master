@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/01.13/01.13.csproj",
+      "projectUniqueName": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/02.13/01.13.csproj",
       "projectName": "01.13",
-      "projectPath": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/01.13/01.13.csproj",
+      "projectPath": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/02.13/01.13.csproj",
       "packagesPath": "/home/daniil/.nuget/packages/",
-      "outputPath": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/01.13/obj/",
+      "outputPath": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/02.13/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/daniil/.nuget/NuGet/NuGet.Config"
