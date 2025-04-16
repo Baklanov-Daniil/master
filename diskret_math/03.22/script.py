@@ -21,7 +21,9 @@ def ford_bellman(data, start):
             for second_vertex in range(data_len):
                 if data[first_vertx][second_vertex]!=0 and lambda_list[first_vertx] + data[first_vertx][second_vertex] < lambda_list[second_vertex]:
                     lambda_list[second_vertex] = lambda_list[first_vertx] + data[first_vertx][second_vertex]
+                    print(first_vertx ,second_vertex, lambda_list[second_vertex])
                     update = True
+        print(lambda_list)
         if not update: break
     print(lambda_list)
 

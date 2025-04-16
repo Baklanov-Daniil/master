@@ -1,4 +1,5 @@
 # флойд
+import copy
 def get_data():
     data = []
     with open("data.txt", "r") as file:
@@ -15,12 +16,13 @@ def get_vertexes(data):
     return vertexes_list
 
 def show_data(data):
+    data_f = copy.deepcopy(data)
     for i in range(len(data)):
-        data[i][i] = "-"
-        for j in range(len(data)):
-            if data[i][j] == float("inf"):
-                data[i][j] = "∞"
-            print(f"{data[i][j]} ", end="")
+        data_f[i][i] = "0"
+        for j in range(len(data_f)):
+            if data_f[i][j] == float("inf"):
+                data_f[i][j] = "∞"
+            print(f"{data_f[i][j]} ", end="")
         print()    
 
 def algorithm_floida(data):
@@ -30,7 +32,8 @@ def algorithm_floida(data):
             for second_vertex in range(len(data)):
                 if data[first_vertex][second_vertex]>data[first_vertex][base_vertex] + data[base_vertex][second_vertex]:
                     data[first_vertex][second_vertex] = data[first_vertex][base_vertex] + data[base_vertex][second_vertex]
-    show_data(data)
+        show_data(data)
+        print()
 
 if __name__=="__main__":
     data = get_data()

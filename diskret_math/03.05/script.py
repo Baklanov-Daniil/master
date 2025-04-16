@@ -1,5 +1,5 @@
 #алгоритм Дейкстра
-def algorithm_deikstra(data, start, end):
+def algorithm_deikstra(data, start):
     data_len = len(data)
     dist = [float('inf')] * data_len
     dist[start] = 0
@@ -19,7 +19,7 @@ def algorithm_deikstra(data, start, end):
                 new_dist = dist[first_vertex] + data[first_vertex][second_vertex]
                 if new_dist < dist[second_vertex]:
                     dist[second_vertex] = new_dist
-    print(dist[end])
+    print(dist)
 
 
 def get_data():
@@ -31,5 +31,5 @@ def get_data():
 
 if __name__=="__main__":
     data = get_data()
-    algorithm_deikstra(data, 2, 3)
+    algorithm_deikstra(data, 0)
     
