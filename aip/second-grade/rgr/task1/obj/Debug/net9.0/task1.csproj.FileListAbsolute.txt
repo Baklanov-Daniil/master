@@ -1,0 +1,15 @@
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.GeneratedMSBuildEditorConfig.editorconfig
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.AssemblyInfoInputs.cache
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.AssemblyInfo.cs
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.csproj.CoreCompileInputs.cache
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.sourcelink.json
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/bin/Debug/net9.0/task1
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/bin/Debug/net9.0/task1.deps.json
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/bin/Debug/net9.0/task1.runtimeconfig.json
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/bin/Debug/net9.0/task1.dll
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/bin/Debug/net9.0/task1.pdb
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.dll
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/refint/task1.dll
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.pdb
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.genruntimeconfig.cache
+/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/ref/task1.dll
