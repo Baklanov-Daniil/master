@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace dikret_rgr
+namespace diskret_rgr
 {
     class Program
     {
@@ -10,16 +10,9 @@ namespace dikret_rgr
         {
             string[] lines = File.ReadAllLines(filePath);
             int vertexCount = int.Parse(lines[0]);
-            int edgeCount = int.Parse(lines[1]);
+            int edge_count = int.Parse(lines[1]);
             int[,] data = new int[vertexCount, vertexCount];
-            for (int i = 0; i < vertexCount; i++)
-            {
-                for (int j = 0; j < vertexCount; j++)
-                {
-                    data[i, j] = (i == j) ? 0 : int.MaxValue;
-                }
-            }
-            for (int line = 2; line < 2 + edgeCount; line++)
+            for (int line = 2; line < 2 + edge_count; line++)
             {
                 string[] parts = lines[line].Split(' ');
                 int vertex1 = int.Parse(parts[0]) - 1;
@@ -31,7 +24,7 @@ namespace dikret_rgr
             }
             return data;
         }
-        static List<int> GetPath(int[] vertexBefore, int end)
+        static List<int> Getpath(int[] vertexBefore, int end)
         {
             List<int> path = new List<int>();
             if (vertexBefore[end] == -1) return path;
@@ -43,8 +36,8 @@ namespace dikret_rgr
         static void Main(string[] args)
         {
             int[,] data = GetData("data.txt");
-            int start = 1;
-            int end = 5;
+            int start = 6;
+            int end = 8;
             int vertexCount = data.GetLength(0);
             int[] distances = new int[vertexCount];
             int[] vertexBefore = new int[vertexCount];
@@ -53,31 +46,31 @@ namespace dikret_rgr
             for (int vertex = 0; vertex<vertexCount; vertex++) distances[vertex] = (vertex == start-1) ? 0 : int.MaxValue;
             for (int step = 0; step<vertexCount-1; step++)
             {
-                int closed_vertex = -1;
-                int minDistance = int.MaxValue;
+                int closedVertex = -1;
+                int min_distance = int.MaxValue;
                 for (int vertex = 0; vertex<vertexCount; vertex++)
                 {
-                    if (!visited_vertex[vertex] && distances[vertex]<minDistance)
+                    if (!visited_vertex[vertex] && distances[vertex]<min_distance)
                     {
-                        minDistance = distances[vertex];
-                        closed_vertex = vertex;
+                        min_distance = distances[vertex];
+                        closedVertex = vertex;
                     }
                 }
-                if (closed_vertex == -1) break;
-                visited_vertex[closed_vertex] = true;
+                if (closedVertex == -1) break;
+                visited_vertex[closedVertex] = true;
                 for (int neighborVertex =  0; neighborVertex<vertexCount; neighborVertex++)
                 {
-                    int edge_weight = data[closed_vertex, neighborVertex];
+                    int edge_weight = data[closedVertex, neighborVertex];
                     if (edge_weight == 0 || visited_vertex[neighborVertex]) continue;
-                    if (distances[closed_vertex] != int.MaxValue && 
-                        distances[closed_vertex]+edge_weight<distances[neighborVertex]) 
+                    if (distances[closedVertex] != int.MaxValue && 
+                        distances[closedVertex]+edge_weight<distances[neighborVertex]) 
                         {
-                            distances[neighborVertex] = distances[closed_vertex]+edge_weight;
-                            vertexBefore[neighborVertex] = closed_vertex;
+                            distances[neighborVertex] = distances[closedVertex]+edge_weight;
+                            vertexBefore[neighborVertex] = closedVertex;
                         }
                 }
             }
-            List<int> path = GetPath(vertexBefore, end-1);
+            List<int> path = Getpath(vertexBefore, end-1);
             if (path.Count == 0)
             {
                 Console.WriteLine($"Пути от вершины {start} к {end} не существует");

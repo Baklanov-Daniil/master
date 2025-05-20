@@ -57,7 +57,7 @@ namespace aip_rgr
             return data;
         }
 
-        static int get_max(int[,] data)
+        static int GetMax(int[,] data)
         {
             int mx = 0;
             for (int firstVertex=0; firstVertex < data.GetLength(0); firstVertex++)
@@ -99,7 +99,7 @@ namespace aip_rgr
         {
             int[,] data = GetData(path);
             data = AlgorithmFloida(data);
-            int mx = get_max(data);
+            int mx = GetMax(data);
             string[] answer = { Convert.ToString(mx) };
             return answer;
         }

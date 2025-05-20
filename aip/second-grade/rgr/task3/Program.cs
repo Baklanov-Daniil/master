@@ -68,10 +68,6 @@ namespace aip_rgr
             double distance = R * angle;
             string[] answer = { distance.ToString("F3").Replace(",", ".") };
             return answer;
-            // double a = Math.Sin(dLat/2) * Math.Sin(dLat/2) + 
-            //         Math.Cos(lat1) * Math.Cos(lat2) * 
-            //         Math.Sin(dLon/2) * Math.Sin(dLon/2);
-            // double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1-a));
         }
 
         static void Main(string[] args)
