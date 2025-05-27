@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task3/task3.csproj": {}
+    "C:\\Users\\sosat_polezno.DESKTOP-BBDRF98\\Desktop\\git_rep\\master\\aip\\second-grade\\rgr\\task3\\task3.csproj": {}
   },
   "projects": {
-    "/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task3/task3.csproj": {
+    "C:\\Users\\sosat_polezno.DESKTOP-BBDRF98\\Desktop\\git_rep\\master\\aip\\second-grade\\rgr\\task3\\task3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task3/task3.csproj",
+        "projectUniqueName": "C:\\Users\\sosat_polezno.DESKTOP-BBDRF98\\Desktop\\git_rep\\master\\aip\\second-grade\\rgr\\task3\\task3.csproj",
         "projectName": "task3",
-        "projectPath": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task3/task3.csproj",
-        "packagesPath": "/home/daniil/.nuget/packages/",
-        "outputPath": "/home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task3/obj/",
+        "projectPath": "C:\\Users\\sosat_polezno.DESKTOP-BBDRF98\\Desktop\\git_rep\\master\\aip\\second-grade\\rgr\\task3\\task3.csproj",
+        "packagesPath": "C:\\Users\\sosat_polezno.DESKTOP-BBDRF98\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sosat_polezno.DESKTOP-BBDRF98\\Desktop\\git_rep\\master\\aip\\second-grade\\rgr\\task3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/daniil/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\sosat_polezno.DESKTOP-BBDRF98\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

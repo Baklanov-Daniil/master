@@ -24,20 +24,12 @@ namespace diskret_rgr
             }
             return data;
         }
-        static List<int> Getpath(int[] vertexBefore, int end)
-        {
-            List<int> path = new List<int>();
-            if (vertexBefore[end] == -1) return path;
-            for (int towards = end; towards != -1; towards = vertexBefore[towards]) path.Add(towards+1);
-            path.Reverse();
-            return path;
-        }
 
         static void Main(string[] args)
         {
             int[,] data = GetData("data.txt");
-            int start = 6;
-            int end = 8;
+            int start = 1;
+            int end = 3;
             int vertexCount = data.GetLength(0);
             int[] distances = new int[vertexCount];
             int[] vertexBefore = new int[vertexCount];
@@ -70,14 +62,13 @@ namespace diskret_rgr
                         }
                 }
             }
-            List<int> path = Getpath(vertexBefore, end-1);
-            if (path.Count == 0)
+            if (distances[end-1] == int.MaxValue)
             {
-                Console.WriteLine($"Пути от вершины {start} к {end} не существует");
+                Console.WriteLine(-1);
             }
             else 
             {
-                Console.WriteLine($"Пути от вершины {start} к {end}: {string.Join(" → ", path)} = {distances[end-1]}");
+                Console.WriteLine(distances[end-1]);
             }
         }
     }

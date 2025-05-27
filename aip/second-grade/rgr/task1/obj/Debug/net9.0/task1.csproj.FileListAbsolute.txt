@@ -13,3 +13,18 @@
 /home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.pdb
 /home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/task1.genruntimeconfig.cache
 /home/daniil/Рабочий стол/programing/master/aip/second-grade/rgr/task1/obj/Debug/net9.0/ref/task1.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\bin\Debug\net9.0\task1.exe
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\bin\Debug\net9.0\task1.deps.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\bin\Debug\net9.0\task1.runtimeconfig.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\bin\Debug\net9.0\task1.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\bin\Debug\net9.0\task1.pdb
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.AssemblyInfoInputs.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.AssemblyInfo.cs
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.csproj.CoreCompileInputs.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.sourcelink.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\refint\task1.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.pdb
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\task1.genruntimeconfig.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\rgr\task1\obj\Debug\net9.0\ref\task1.dll
