@@ -66,9 +66,9 @@ namespace aip
             Console.WriteLine("-----------------------------");
             Console.WriteLine("1 - заполнить базу данных");
             Console.WriteLine("2 - получить информацию по номеру телефона");
-            Console.WriteLine("3 - получить выбоку по году подключения");
-            Console.WriteLine("4 - получить выбоку по оператору");
-            Console.WriteLine("5 - получить выбоку по имени владельца");
+            Console.WriteLine("3 - получить выборку по году подключения");
+            Console.WriteLine("4 - получить выборку по оператору");
+            Console.WriteLine("5 - получить выборку по имени владельца");
             Console.WriteLine("6 - выйти из программы");
             Console.WriteLine("-----------------------------");
         }
@@ -100,10 +100,10 @@ namespace aip
         {
             Console.Write("Введите искомый год: ");
             string year = Console.ReadLine();
-            var YaerGet = from phone in this.Phones
+            var YearGet = from phone in this.Phones
                             where phone.Year == year
                             select phone;
-            ShowInfo(YaerGet.ToArray());
+            ShowInfo(YearGet.ToArray());
         }
 
         public void GetByProvider()
@@ -119,9 +119,9 @@ namespace aip
         public void GetByUserName()
         {
             Console.Write("Введите искомое имя: ");
-            string username = Console.ReadLine();
+            string userName = Console.ReadLine();
             var UserGet = from phone in this.Phones
-                            where phone.UserName == username
+                            where phone.UserName == userName
                             select phone;
             ShowInfo(UserGet.ToArray());
         }

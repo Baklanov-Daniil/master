@@ -14,7 +14,7 @@ namespace aip
         public List<Book> return_books = new List<Book>();
 
 
-        public void Add_book(Book book)
+        public void AddBook(Book book)
         {
             this.library.Add(book);
         }
@@ -28,7 +28,7 @@ namespace aip
             this.return_books.Add(book);
         }
 
-        public void Get_didnt_get()
+        public void GetDidntGet()
         {
             List<Book> answer = new List<Book>();
             bool is_find = false;
@@ -54,7 +54,7 @@ namespace aip
             }
             Console.WriteLine();
         }
-        public void Get_didnt_return()
+        public void GetDidntReturn()
         {
             List<Book> answer = new List<Book>();
             bool is_find = false;
@@ -106,11 +106,11 @@ namespace aip
             Library library = new Library();
             Book book1 = new Book("aaa", "aaaa", 1, "aaaa");
             Book book2 = new Book("bbb", "bbbb", 2, "bbbb");
-            library.Add_book(book1);
-            library.Add_book(book2);
+            library.AddBook(book1);
+            library.AddBook(book2);
             library.Give_book(book2);
-            library.Get_didnt_get();
-            library.Get_didnt_return();
+            library.GetDidntGet();
+            library.GetDidntReturn();
         }
     }
 }

@@ -12,17 +12,17 @@ namespace aip{
         }
 
         public void Add(T item){
-            if (count == list.Length) Array.Resize(ref list, list.Length+1);
+            if (count == list.Length) Array.Resize(ref list, list.Length*2);
             list[count] = item;
             count++;
         }
 
         public bool Remove(int index){
             if (index < 0 || index >= count){
-                Console.WriteLine("Обка индекса");
+                Console.WriteLine("Ошибка индекса");
                 return false;
             }
-            for (int i = index;i < count; i++){
+            for (int i = index; i < count-1; i++){
                 list[i] = list[i+1];
             }
             count--;
@@ -31,7 +31,7 @@ namespace aip{
 
         public T Find(int index){
             if (index < 0 || index >= count){
-                Console.WriteLine("Ошибка индекса");
+                Console.Write("Ошибка индекса ");
                 return default;
             }
             return list[index];
@@ -39,23 +39,35 @@ namespace aip{
         
     }
     class Program{
-        static void Main(string[] args){
-            var mylist1 = new CustomList<int>();
-            mylist1.Add(3);
-            mylist1.Add(5);
-            mylist1.Add(7);
-            Console.WriteLine(mylist1.Find(2));
-            Console.WriteLine(mylist1.Find(1));
-            var mylist2 = new CustomList<string>();
-            mylist2.Add("aadsa");
-            mylist2.Add("sadsadsa");
-            mylist2.Add("sadsaru76434werdgf");
-            Console.WriteLine(mylist2.Find(0));
-            Console.WriteLine(mylist2.Find(2));  
-    
-            Console.WriteLine(mylist1.Find(10)); 
-            Console.WriteLine(mylist2.Find(3));
-        
+        static void Main(string[] args)
+        {
+            var intList = new CustomList<int>();
+            intList.Add(10);
+            intList.Add(20);
+            intList.Add(30);
+            Console.WriteLine(intList.Find(0));
+            Console.WriteLine(intList.Find(1));
+            Console.WriteLine(intList.Find(2));
+            Console.WriteLine(intList.Find(-1));
+            Console.WriteLine(intList.Find(3));
+            intList.Remove(1);
+            Console.WriteLine(intList.Find(1));
+            intList.Remove(5);
+            Console.WriteLine(intList.count);
+            
+            var stringList = new CustomList<string>();
+            stringList.Add("Hello");
+            stringList.Add("World");
+            stringList.Add("!");
+            Console.WriteLine(stringList.Find(0));
+            Console.WriteLine(stringList.Find(1));
+            Console.WriteLine(stringList.Find(2));
+            Console.WriteLine(stringList.Find(-1));
+            Console.WriteLine(stringList.Find(3));
+            stringList.Remove(0);
+            Console.WriteLine(stringList.Find(0)); 
+            stringList.Remove(5);
+            Console.WriteLine(stringList.count);
         }
     }
 }
