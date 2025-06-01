@@ -1,0 +1,15 @@
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.AssemblyInfoInputs.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.AssemblyInfo.cs
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.csproj.CoreCompileInputs.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.sourcelink.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\bin\Debug\net9.0\05.17.exe
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\bin\Debug\net9.0\05.17.deps.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\bin\Debug\net9.0\05.17.runtimeconfig.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\bin\Debug\net9.0\05.17.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\bin\Debug\net9.0\05.17.pdb
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\refint\05.17.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.pdb
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\05.17.genruntimeconfig.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.17\obj\Debug\net9.0\ref\05.17.dll
