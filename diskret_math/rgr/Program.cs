@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace rgr
+namespace dikret_rgr
 {
     class Program
     {
@@ -36,15 +36,16 @@ namespace rgr
         static void Main(string[] args)
         {
             int[,] data = get_data("data.txt");
-            int start = 1;
-            int end = 5;
+            int start = 6;
+            int end = 8;
             int vertex_count = data.GetLength(0);
             int[] distances = new int[vertex_count];
             int[] vertex_before = new int[vertex_count];
             bool[] visited_vertex = new bool[vertex_count];
             for (int vertex = 0; vertex<vertex_count; vertex++) vertex_before[vertex] = -1;
             for (int vertex = 0; vertex<vertex_count; vertex++) distances[vertex] = (vertex == start-1) ? 0 : int.MaxValue;
-            for (int step = 0; step<vertex_count-1; step++){
+            for (int step = 0; step<vertex_count-1; step++)
+            {
                 int closed_vertex = -1;
                 int min_distance = int.MaxValue;
                 for (int vertex = 0; vertex<vertex_count; vertex++)
