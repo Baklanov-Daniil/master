@@ -15,71 +15,70 @@ using System.Linq;
 
 namespace aip
 {
-    public class FirstTable
+    public class Products
     {
-        public List<int> product_number = new List<int>();
-        public List<string> product_name = new List<string>();
+        public List<int> productIds = new List<int>();
+        public List<string> productNames = new List<string>();
 
-
-        public void InsertData(List<int> product_number, List<string> product_name)
+        public void InsertData(List<int> productIds, List<string> productNames)
         {
-            this.product_number = product_number;
-            this.product_name = product_name;
+            this.productIds = productIds;
+            this.productNames = productNames;
         }
     }
 
-    public class SecondTable
+    public class Suppliers
     {
-        public List<int> supplier_number = new List<int>();
-        public List<string> supplier_name = new List<string>();
+        public List<int> supplierNumbers = new List<int>();
+        public List<string> supplierNames = new List<string>();
+        public List<string> supplierPhones = new List<string>();
 
-        public List<string> supplier_phone = new List<string>();
-        public void InsertData(List<int> supplier_number, List<string> supplier_name, List<string> supplier_phone)
+        public void InsertData(List<int> supplierNumbers, List<string> supplierNames, List<string> supplierPhones)
         {
-            this.supplier_number = supplier_number;
-            this.supplier_name = supplier_name;
-            this.supplier_phone = supplier_phone;
+            this.supplierNumbers = supplierNumbers;
+            this.supplierNames = supplierNames;
+            this.supplierPhones = supplierPhones;
         }
     }
 
-    public class ThirdTable
+    public class Transactions
     {
-        public List<int> supplier_number = new List<int>();
-        public List<int> product_number = new List<int>();
-        public List<DateTime> supply_date = new List<DateTime>();
-        public List<int> quality = new List<int>();
-        public List<int> price = new List<int>();
+        public List<int> supplierNumbers = new List<int>();
+        public List<int> productIds = new List<int>();
+        public List<DateTime> supplyDates = new List<DateTime>();
+        public List<int> qualities = new List<int>();
+        public List<int> prices = new List<int>();
 
-        public void InsertData(List<int> supplier_number, List<int> product_number, List<DateTime> supply_date, List<int> quality, List<int> price)
+        public void InsertData(List<int> supplierNumbers, List<int> productIds, List<DateTime> supplyDates, List<int> qualities, List<int> prices)
         {
-            this.supplier_number = supplier_number;
-            this.product_number = product_number;
-            this.supply_date = supply_date;
-            this.quality = quality;
-            this.price = price;
+            this.supplierNumbers = supplierNumbers;
+            this.productIds = productIds;
+            this.supplyDates = supplyDates;
+            this.qualities = qualities;
+            this.prices = prices;
         }
     }
 
     public class Menu
     {
-        public FirstTable firstTable = new FirstTable();
-        public SecondTable secondTable = new SecondTable();
-        public ThirdTable thirdTable = new ThirdTable();
+        public Products products = new Products();
+        public Suppliers suppliers = new Suppliers();
+        public Transactions transactions = new Transactions();
 
-        public void FillData() // тестовые данные
+        public void FillData()
         {
-            this.firstTable.InsertData(
+            this.products.InsertData(
                 new List<int> { 1, 2, 3, 4, 5 },
                 new List<string> { "Ноутбук", "Монитор", "Клавиатура", "Мышь", "Наушники" }
             );
 
-            this.secondTable.InsertData(
+            this.suppliers.InsertData(
                 new List<int> { 101, 102, 103, 104 },
                 new List<string> { "TechCorp", "ElectroPlus", "GadgetWorld", "CompMaster" },
                 new List<string> { "+79001112233", "+79002223344", "+79003334455", "+79004445566" }
             );
 
-            this.thirdTable.InsertData(
+            this.transactions.InsertData(
                 new List<int> { 101, 102, 101, 103, 104, 102, 101 },
                 new List<int> { 1, 2, 3, 4, 5, 1, 2 },
                 new List<DateTime>
@@ -97,37 +96,229 @@ namespace aip
             );
         }
 
+        public void ShowMenu()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=== МЕНЮ ===");
+                Console.WriteLine("1. Поставщик с наибольшей суммой поставок");
+                Console.WriteLine("2. Поставки по датам");
+                Console.WriteLine("3. Товары по поставщикам");
+                Console.WriteLine("4. Самый часто поставляемый товар");
+                Console.WriteLine("5. Сумма поставок по поставщикам");
+                Console.WriteLine("0. Выход");
+                Console.Write("Выберите действие: ");
+                int choice = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (choice)
+                {
+                    case 1:
+                        GetTheMostExpensiveSupplier();
+                        break;
+                    case 2:
+                        GetSuppliesGroupedByDate();
+                        break;
+                    case 3:
+                        GetProductsGroupedBySupplier();
+                        break;
+                    case 4:
+                        GetMostFrequentlySuppliedProduct();
+                        break;
+                    case 5:
+                        GetTotalSuppliesBySupplier();
+                        break;
+                    case 0:
+                        return;
+                    default:
+                        Console.WriteLine("Неверный выбор!");
+                        break;
+                }
+                Console.ReadKey();
+            }
+        }
+
         public void GetTheMostExpensiveSupplier()
         {
-            var query = thirdTable.supplier_number
-                        .Select((supplierNum, index) => new
-                        {
-                            SupplierNumber = supplierNum,
-                            ProductNumber = thirdTable.product_number[index],
-                            Quantity = thirdTable.quality[index],
-                            Price = thirdTable.price[index],
-                            Total = thirdTable.quality[index] * thirdTable.price[index]
-                        })
-                        .GroupBy(x => x.SupplierNumber)
-                        .Select(g => new
-                        {
-                            SupplierNumber = g.Key,
-                            TotalSum = g.Sum(x => x.Total),
-                            SupplierName = secondTable.supplier_name[secondTable.supplier_number.IndexOf(g.Key)]
-                        })
-                        .OrderByDescending(x => x.TotalSum)
-                        .FirstOrDefault();
+            var transactionItems = transactions.supplierNumbers
+                .Select((supplierNum, index) => new
+                {
+                    supplierId = supplierNum,
+                    quantity = transactions.qualities[index],
+                    price = transactions.prices[index]
+                });
 
-            if (query != null)
+            var supplierItems = suppliers.supplierNumbers
+                .Select((supplierNum, index) => new
+                {
+                    id = supplierNum,
+                    name = suppliers.supplierNames[index],
+                    phone = suppliers.supplierPhones[index]
+                });
+
+            var suppliersWithTotals = (
+                from t in transactionItems
+                join s in supplierItems on t.supplierId equals s.id
+                group t by s into grouped
+                let total = grouped.Sum(i => i.quantity * i.price)
+                orderby total descending
+                select new
+                {
+                    supplier = grouped.Key,
+                    total
+                }
+            ).ToList();
+            var maxTotal = suppliersWithTotals.First().total;
+            var topSuppliers = suppliersWithTotals.Where(x => x.total == maxTotal);
+
+            Console.WriteLine("=== Поставщики с наибольшей суммой поставок ===");
+            Console.WriteLine($"Максимальная сумма: {maxTotal} руб.");
+            Console.WriteLine($"Количество поставщиков: {topSuppliers.Count()}\n");
+
+            foreach (var result in topSuppliers)
             {
-                Console.WriteLine($"Поставщик с наибольшей суммой поставок:");
-                Console.WriteLine($"Номер: {query.SupplierNumber}");
-                Console.WriteLine($"Название: {query.SupplierName}");
-                Console.WriteLine($"Сумма поставок: {query.TotalSum} руб.");
+                Console.WriteLine($"Номер: {result.supplier.id}");
+                Console.WriteLine($"Название: {result.supplier.name}");
+                Console.WriteLine($"Телефон: {result.supplier.phone}");
+                Console.WriteLine($"Сумма поставок: {result.total} руб.\n");
             }
-            else
+        }
+
+        public void GetSuppliesGroupedByDate()
+        {
+            var transactionItems = transactions.supplyDates
+                .Select((date, index) => new
+                {
+                    date,
+                    productId = transactions.productIds[index],
+                    quantity = transactions.qualities[index],
+                    price = transactions.prices[index]
+                });
+
+            var productItems = products.productIds
+                .Select((id, index) => new
+                {
+                    id,
+                    name = products.productNames[index]
+                });
+
+            var result = (
+                from t in transactionItems
+                join p in productItems on t.productId equals p.id
+                group new { p.name, t.quantity, t.price } by t.date into grouped
+                orderby grouped.Key
+                select grouped
+            );
+
+            Console.WriteLine("\nПоставки по датам:");
+            foreach (var group in result)
             {
-                Console.WriteLine("Нет данных о поставках.");
+                Console.WriteLine($"\nДата: {group.Key:d}");
+                foreach (var item in group)
+                {
+                    Console.WriteLine($"  {item.name}: {item.quantity} шт. по {item.price} руб.");
+                }
+            }
+        }
+
+        public void GetProductsGroupedBySupplier()
+        {
+            var transactionItems = transactions.supplierNumbers
+                .Select((supplierNum, index) => new
+                {
+                    supplierId = supplierNum,
+                    productId = transactions.productIds[index],
+                    quantity = transactions.qualities[index]
+                });
+
+            var supplierItems = suppliers.supplierNumbers
+                .Select((supplierNum, index) => new
+                {
+                    id = supplierNum,
+                    name = suppliers.supplierNames[index]
+                });
+
+            var productItems = products.productIds
+                .Select((id, index) => new
+                {
+                    id,
+                    name = products.productNames[index]
+                });
+
+            var result = (
+                from t in transactionItems
+                join s in supplierItems on t.supplierId equals s.id
+                join p in productItems on t.productId equals p.id
+                group new { p.name, t.quantity } by s.name into grouped
+                select new
+                {
+                    supplier = grouped.Key,
+                    products = grouped.OrderByDescending(x => x.quantity)
+                }
+            );
+
+            Console.WriteLine("\nТовары по поставщикам:");
+            foreach (var group in result)
+            {
+                Console.WriteLine($"\nПоставщик: {group.supplier}");
+                foreach (var product in group.products)
+                {
+                    Console.WriteLine($"  {product.name}: {product.quantity} шт.");
+                }
+            }
+        }
+
+        public void GetMostFrequentlySuppliedProduct()
+        {
+            var result = transactions.productIds
+                .GroupBy(id => id)
+                .Select(g => new
+                {
+                    productId = g.Key,
+                    count = g.Count()
+                })
+                .OrderByDescending(x => x.count)
+                .FirstOrDefault();
+
+            if (result != null)
+            {
+                var productName = products.productNames[products.productIds.IndexOf(result.productId)];
+                Console.WriteLine($"\nСамый часто поставляемый товар: {productName} ({result.count} поставок)");
+            }
+        }
+
+        public void GetTotalSuppliesBySupplier()
+        {
+            var transactionItems = transactions.supplierNumbers
+                .Select((supplierNum, index) => new
+                {
+                    supplierId = supplierNum,
+                    quantity = transactions.qualities[index],
+                    price = transactions.prices[index]
+                });
+
+            var supplierItems = suppliers.supplierNumbers
+                .Select((supplierNum, index) => new
+                {
+                    id = supplierNum,
+                    name = suppliers.supplierNames[index]
+                });
+
+            var result = (
+                from t in transactionItems
+                join s in supplierItems on t.supplierId equals s.id
+                group t by s.name into grouped
+                select new
+                {
+                    supplier = grouped.Key,
+                    total = grouped.Sum(x => x.quantity * x.price)
+                }
+            );
+
+            Console.WriteLine("\nСумма поставок по поставщикам:");
+            foreach (var item in result)
+            {
+                Console.WriteLine($"  {item.supplier}: {item.total} руб.");
             }
         }
 
@@ -137,7 +328,7 @@ namespace aip
             {
                 Menu menu = new Menu();
                 menu.FillData();
-                menu.GetTheMostExpensiveSupplier();
+            menu.ShowMenu();
             }
         }
     }

@@ -1,0 +1,15 @@
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\bin\Debug\net9.0\05.28.exe
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\bin\Debug\net9.0\05.28.deps.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\bin\Debug\net9.0\05.28.runtimeconfig.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\bin\Debug\net9.0\05.28.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\bin\Debug\net9.0\05.28.pdb
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.AssemblyInfoInputs.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.AssemblyInfo.cs
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.csproj.CoreCompileInputs.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.sourcelink.json
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\refint\05.28.dll
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.pdb
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\05.28.genruntimeconfig.cache
+C:\Users\sosat_polezno.DESKTOP-BBDRF98\Desktop\git_rep\master\aip\second-grade\05.28\obj\Debug\net9.0\ref\05.28.dll
