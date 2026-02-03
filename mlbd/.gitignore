@@ -1,0 +1,16 @@
+*.log
+node_modules/
+dist/
+build/
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+venv/
+env/
+.venv/
+*.sqlite3
+obj/
