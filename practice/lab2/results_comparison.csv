@@ -1,0 +1,13 @@
+Модель;Датасет;Метод;Время (с);Accuracy;F1-score;Precision;Recall
+DTREE;large;GridSearchCV;-;1,0;1,0;1,0;1,0
+DTREE;large;PyGAD;0.4661;0,7333;0,7268;0,7228;0,7333
+DTREE;large;PySwarms;1.1615;0,7333;0,7268;0,7228;0,7333
+DTREE;small;GridSearchCV;-;1,0;1,0;1,0;1,0
+DTREE;small;PyGAD;0.3085;0,9;0,8526;0,81;0,9
+DTREE;small;PySwarms;0.577;0,9;0,8526;0,81;0,9
+KNN;large;GridSearchCV;-;0,9;0,8966;0,8999;0,9
+KNN;large;PyGAD;0.7159;0,7533;0,7315;0,7335;0,7533
+KNN;large;PySwarms;2.3139;0,7533;0,7315;0,7335;0,7533
+KNN;small;GridSearchCV;-;0,9;0,8526;0,81;0,9
+KNN;small;PyGAD;0.3033;0,9;0,8526;0,81;0,9
+KNN;small;PySwarms;0.76;0,9;0,8526;0,81;0,9
