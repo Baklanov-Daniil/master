@@ -21,37 +21,33 @@ wrappers = {
 }
 
 N_RUNS, N_CALLS = 50, 100_000
-results = {}
+raw_data = []
 
+# 1. Итерируемся по методам (оберткам), а не по запускам
 for name, func in wrappers.items():
-    print(f"прогрев {name}")
+    # Разогрев для текущего метода (не считаем в статистику)
     for _ in range(1000): func(a[0], b[0])
-    print(f"старт {name}")
-    times = []
-    for _ in range(N_RUNS):
-        t0 = time.perf_counter()
-        for i in range(N_CALLS): func(a[i], b[i])
-        times.append(time.perf_counter() - t0)
     
-    results[name] = {
-        "min": min(times), "max": max(times),
-        "mean": mean(times), "median": median(times), "std": stdev(times)
-    }
+    # 50 замеров по 100_000 вызовов
+    for i in range(1, N_RUNS + 1):
+        t0 = time.perf_counter()
+        for j in range(N_CALLS): func(a[j], b[j])
+        elapsed = time.perf_counter() - t0
+        # Сохраняем в "длинном" формате: метод, номер запуска, время
+        raw_data.append({"method": name, "run_id": i, "time": elapsed})
 
-df = pd.DataFrame(results).T
-df = df.round(4)
+# 2. Создаем таблицу и считаем статистику через groupby
+df = pd.DataFrame(raw_data)
+df["time"] = df["time"].astype(float) # Гарантия, что время — это числа
 
-print(df)
+stats = df.groupby("method")["time"].agg(["min", "max", "mean", "median", "std"]).round(4)
 
-csv_path = os.path.join(os.path.dirname(__file__), "results.csv")
-df.to_csv(csv_path)
+# 3. Вывод и сохранение
+print(stats)
+df.to_csv(os.path.join(os.path.dirname(__file__), "raw_runs.csv"), index=False)
+stats.to_csv(os.path.join(os.path.dirname(__file__), "results.csv"))
 
 plt.figure(figsize=(8, 5))
-plt.bar(df.index, df["mean"], yerr=df["std"], capsize=5, 
-        color=["#4e79a7","#f28e2b","#e15759","#76b7b2"])
-plt.ylabel("Время (секунды)")
-plt.title("Сравнение производительности FFI подходов\n(100,000 вызовов, 50 запусков)")
-plt.grid(axis="y", alpha=0.3)
-plt.tight_layout()
-plot_path = os.path.join(os.path.dirname(__file__), "plot.png")
-plt.savefig(plot_path, dpi=150)
+plt.bar(stats.index, stats["mean"], yerr=stats["std"], capsize=5)
+plt.ylabel("Time (s)")
+plt.savefig(os.path.join(os.path.dirname(__file__), "plot.png"))
