@@ -31,7 +31,7 @@ test-all: test-ctypes test-cffi test-capi test-cython
 
 all: test-ctypes test-cffi test-capi test-cython
 
-benchmark: lib
+benchmark:
 	cd benchmark && python benchmark.py
 
 clean:

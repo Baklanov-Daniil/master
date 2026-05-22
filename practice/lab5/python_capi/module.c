@@ -57,11 +57,6 @@ static PyObject* py_dot_product(PyObject* self, PyObject* args) {
         goto cleanup;
     }
 
-    if (len_a != len_b) {
-        PyErr_SetString(PyExc_ValueError, "Vectors must have the same length");
-        goto cleanup;
-    }
-
     double result;
     if (dot_product(a, b, (size_t)len_a, &result) != 0) {
         PyErr_SetString(PyExc_RuntimeError, "dot_product failed internally");
