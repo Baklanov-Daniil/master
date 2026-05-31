@@ -3,6 +3,7 @@ import pandas as pd
 import pickle
 import keras
 import catboost
+import numpy as np
 
 MODEL_PATHS = {
     "ML1: Классическая (kNN)": "models/ML1_LogReg.pkl",
@@ -52,7 +53,7 @@ def predict_wine(input_data, model):
         
     return prediction[0], probability
 
-tabs = st.tabs(["📝 Ручной ввод", "📂 Загрузка CSV"])
+tabs = st.tabs(["Ручной ввод", "Загрузка CSV"])
 
 with tabs[0]:
     st.subheader("Введите характеристики вина")
@@ -61,7 +62,7 @@ with tabs[0]:
         "volatile acidity": (0.0, 2.0, 0.01, "г/дм³"),
         "citric acid": (0.0, 2.0, 0.01, "г/дм³"),
         "residual sugar": (0.0, 70.0, 0.1, "г/дм³"),
-        "chlorides": (0.0, 0.6, 0.001, "г/дм³"),
+        "chlorides": (0.0, 0.6, 0.01, "г/дм³"),
         "free sulfur dioxide": (1.0, 300.0, 1.0, "мг/дм³"),
         "total sulfur dioxide": (6.0, 450.0, 1.0, "мг/дм³"),
         "density": (0.98, 1.05, 0.0001, "г/см³"),
@@ -85,7 +86,7 @@ with tabs[0]:
             )
             user_inputs[name] = val
 
-    if st.button("🔮 Предсказать", type="primary"):
+    if st.button("Предсказать", type="primary"):
         input_df = pd.DataFrame([user_inputs])
         
         results = []
@@ -93,8 +94,7 @@ with tabs[0]:
             try:
                 pred_class, prob = predict_wine(input_df, model)
                 
-                wine_type = "🍷 Красное вино" if pred_class == 1 else "🥂 Белое вино"
-                # Вероятность того класса, который предсказан
+                wine_type = "Красное вино" if pred_class == 1 else "Белое вино"
                 conf = prob if pred_class == 1 else (1 - prob)
                 
                 results.append({
@@ -102,7 +102,6 @@ with tabs[0]:
                     "Тип": wine_type,
                     "Уверенность": f"{conf:.2%}"
                 })
-                st.success("Предсказание успешно!")
             except Exception as e:
                 results.append({
                     "Мodel": name,
@@ -119,7 +118,7 @@ with tabs[1]:
     
     if uploaded_file is not None:
         try:
-            data_to_predict = pd.read_csv(uploaded_file)
+            data_to_predict = pd.read_csv(uploaded_file, index_col=0)
             
             required_cols = list(features.keys())
             if not all(col in data_to_predict.columns for col in required_cols):
@@ -129,17 +128,16 @@ with tabs[1]:
                 
                 st.dataframe(data_to_predict.head())
                 
-                if st.button("🚀 Анализировать все записи"):
+                if st.button("Анализировать все записи"):
                     X = data_to_predict[required_cols]
 
                     first_model = list(models.values())[0]
                     preds = first_model.predict(X)
                     
                     df_res = data_to_predict.copy()
-                    df_res['Prediction'] = preds.map({0: 'White', 1: 'Red'})
+                    df_res['Prediction'] = np.where(preds == 0, 'White', 'Red')
                     
                     st.dataframe(df_res)
-                    st.bar_chart(df_res['Prediction'].value_counts())
                     
         except Exception as e:
             st.error(f"Ошибка обработки файла: {e}")
