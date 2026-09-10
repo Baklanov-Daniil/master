@@ -14,7 +14,3 @@ env/
 .venv/
 *.sqlite3
 obj/
-
-
-aip/
-diskret_math/
