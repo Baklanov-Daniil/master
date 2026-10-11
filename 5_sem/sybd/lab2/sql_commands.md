@@ -111,6 +111,6 @@ ALTER TABLE analysis_objects
     ADD FOREIGN KEY (file_id) REFERENCES digital_files(file_id);
 
 -- Ограничение: дата начала экспертизы не раньше даты назначения
-ALTER TABLE examinations 
+ALTER TABLE examinations    
     ADD CHECK (start_date IS NULL OR appointment_date <= start_date);
 ```
