@@ -9,7 +9,7 @@ FROM cases c
 INNER JOIN evidence e ON c.case_id = e.case_id
 ORDER BY c.case_number;
 
--- Все дела + их вещдоки
+-- Все дела + их вещдоки (если вещдока нет — NULL)
 SELECT 
     c.case_number,
     c.status,

@@ -22,11 +22,12 @@ INSERT INTO suspects (suspect_id, case_id, full_name, aliases, status, descripti
 CREATE TABLE expert_profile (
     emp_ID      integer PRIMARY KEY REFERENCES employees(employee_id),
     methods     jsonb,  
+    library jsonb,
     cases_count jsonb  
 );
 
 INSERT INTO expert_profile (emp_ID, methods, library, cases_count) VALUES
-(1, '{"methods": ["хеширование", "восстановление данных"]}',
+(1, '{"methods": ["хеширование", "восст ановление данных"]}',
     '{"library": ["SWAT", "FTK"]}',
     '{"cases": 142}'),
 (2, '{"methods": ["анализ мобильных устройств"]}',
