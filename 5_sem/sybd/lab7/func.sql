@@ -15,7 +15,7 @@ BEGIN
         RETURN;
     END IF;
 	
-    SELECT COALESCE(MAX(case_id), 0) + 1 INTO v_new_case_id FROM cases;
+    SELECT (MAX(case_id)+1) INTO v_new_case_id FROM cases;
 
     INSERT INTO cases (case_id, case_number, registration_date, status, description)
     VALUES (v_new_case_id, p_case_number, p_reg_date, p_status, p_description);
@@ -86,7 +86,7 @@ RETURNS TABLE (
     exam_count      BIGINT,
     file_count      BIGINT
 )
-LANGUAGE plpgsql
+LANGUAGE sql
 AS $$
 BEGIN
     RETURN QUERY
